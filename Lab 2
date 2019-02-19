@@ -1,0 +1,43 @@
+1.	Given
+2xcos(2x)-(x+1)^2=0
+Determine the root of equation using Graphing technique correct to two decimal places in -3≤x≤-2  and -1≤x≤0.
+>> x = -3:0.01:-2
+>> f = 2*x.*cos(2*x)
+>> g = (x+1).^2
+>> plot(x,f,x,g)
+>> Intersections=find(abs(f-g)<=(0.05));
+>> X_Values=x(Intersections)
+
+>> x = -1:0.01:0
+>> f = 2*x.*cos(2*x)
+>> g = (x+1).^2
+>> plot(x,f,x,g)
+>> Intersections=find(abs(f-g)<=(0.05));
+>> X_Values=x(Intersections)
+
+2.	Write Taylor polynomial of f(x)=cosx about x=0 upto 
+>> syms x
+>> f = cos(x)
+
+a)	P1=second order derivative.
+>> P1 = taylor(f,'order',2)
+
+b)P2= forth order derivative.
+>> P2 = taylor(f,'order',4)
+
+c) P3= sixth order derivative.
+>> P3 = taylor(f)
+ 
+d)	Plot f(x), P1, P2 and P3 on the same plane by classifying them using different colors.
+>> syms x
+>> f = cos(x)
+>> P1 = taylor(f,'order',2)
+>> P2 = taylor(f,'order',4)
+>> P3 = taylor(f)
+>> fplot(f)
+>> hold on
+>> fplot(P1)
+>> hold on
+>> fplot(P2)
+>> hold on
+>> fplot(P3)
